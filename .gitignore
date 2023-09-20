@@ -1,0 +1,3 @@
+
+argocd/base/secret-vault-configuration.yaml
+argocd/overlays/nonprod/secret-vault-configuration.yaml
