@@ -2053,7 +2053,7 @@ spec:
         - name: exporters
           emptyDir: {}
       securityContext:
-        fsGroup: 1000
+        fsGroup: null
       affinity:
         podAntiAffinity:
           requiredDuringSchedulingIgnoredDuringExecution:
