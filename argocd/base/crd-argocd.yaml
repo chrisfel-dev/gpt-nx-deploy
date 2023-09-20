@@ -38,9 +38,15 @@ spec:
     initContainers:
       - args:
           - >-
+            whoami &&
             curl -Lo /custom-tools/argocd-vault-plugin
             https://github.com/argoproj-labs/argocd-vault-plugin/releases/download/v1.8.0/argocd-vault-plugin_1.8.0_linux_amd64
-            && chmod +x /custom-tools/argocd-vault-plugin
+            && chmod +x /custom-tools/argocd-vault-plugin &&
+            cd /custom-tools &&
+            curl -Lo kustomize.tar.gz
+            https://github.com/kubernetes-sigs/kustomize/releases/download/kustomize%2Fv4.5.7/kustomize_v4.5.7_linux_amd64.tar.gz 
+            && tar -xvzf kustomize.tar.gz
+            && chmod +x kustomize
         command:
           - /bin/bash
           - '-c'
@@ -79,10 +85,16 @@ spec:
           - name: custom-tools
             subPath: argocd-vault-plugin
             mountPath: /usr/local/bin/argocd-vault-plugin
-  resourceExclusions: |
-    - apiGroups:
-      - kustomize.config.k8s.io
-      kinds:
-      - Kustomization
-      clusters:
-      - "*"  
+          - name: custom-tools
+            subPath: kustomize
+            mountPath: /usr/local/bin/kustomize
+
+
+          
+  #resourceExclusions: |
+  #  - apiGroups:
+  #    - kustomize.config.k8s.io
+  #    kinds:
+  #   - Kustomization
+  #   clusters:
+  #   - "*"  

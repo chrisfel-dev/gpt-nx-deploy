@@ -6,21 +6,24 @@ metadata:
   namespace: argocd
 data:
   avp.yaml: |
+    ---
     apiVersion: argoproj.io/v1alpha1
     kind: ConfigManagementPlugin
     metadata:
-      name: argocd-vault-plugin
+      name: argocd-vault-plugin-kustomize
     spec:
       allowConcurrency: true
       discover:
         find:
           command:
-            - sh
-            - "-c"
-            - "find . -name '*.yaml' | xargs -I {} grep \"<path\\|avp\\.kubernetes\\.io\" {} | grep ."
+            - find
+            - "."
+            - -name
+            - kustomization.yaml
       generate:
         command:
-          - argocd-vault-plugin
-          - generate
-          - "."
+          - sh
+          - "-c"
+          - "kustomize build . | argocd-vault-plugin generate -"
       lockRepo: false
+  
