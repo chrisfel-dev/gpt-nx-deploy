@@ -4,7 +4,6 @@ kind: Kustomization
 commonLabels:
   app: camunda
   project: cubee2e
-  argocd.argoproj.io/managed-by: argocd
 
 resources:
 
