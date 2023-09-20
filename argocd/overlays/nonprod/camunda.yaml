@@ -12,4 +12,4 @@ spec:
   source:
     repoURL: 'https://github.com/chrisfel-dev/gpt-nx-deploy.git'
     targetRevision: HEAD
-    path: camunda/overlays/dev
+    path: camunda/overlays/dev/kustomization.yaml
