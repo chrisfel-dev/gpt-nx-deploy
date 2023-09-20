@@ -7,5 +7,5 @@ commonLabels:
   environment: dev
 
 resources:
-- ../base
+- ../../base
 - test-secret.yaml
