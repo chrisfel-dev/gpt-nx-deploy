@@ -6,4 +6,5 @@ commonLabels:
   project: cubee2e
 
 resources:
+- test-secret.yaml
 
