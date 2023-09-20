@@ -1474,8 +1474,8 @@ spec:
         
     spec:
       securityContext:
-        fsGroup: 1000
-        runAsUser: 1000
+        fsGroup: null
+        runAsUser: null
       automountServiceAccountToken: true
       affinity:
         podAntiAffinity:
@@ -1497,7 +1497,7 @@ spec:
             drop:
             - ALL
           runAsNonRoot: true
-          runAsUser: 1000
+          runAsUser: null
         image: "docker.elastic.co/elasticsearch/elasticsearch:7.17.10"
         imagePullPolicy: "IfNotPresent"
         readinessProbe:
@@ -1662,7 +1662,7 @@ spec:
         nodeAffinity:
           
       securityContext:
-        fsGroup: 1001
+        fsGroup: null
         runAsUser: null
       hostNetwork: false
       hostIPC: false
@@ -1672,7 +1672,7 @@ spec:
           image: docker.io/bitnami/postgresql:15.4.0
           imagePullPolicy: "IfNotPresent"
           securityContext:
-            runAsUser: 1001
+            runAsUser: null
           env:
             - name: BITNAMI_DEBUG
               value: "false"
@@ -1801,7 +1801,7 @@ spec:
     metadata:
       annotations:
         checksum/configmap-env-vars: 4225035f926a2c2d6a41db4dbdd4d4e74ecb47be13d2529145522f6b5613f266
-        checksum/secrets: 8494b39b6895ec9b725c82bdd6f62095bd917a6d66c05c724be91663a4d16eff
+        checksum/secrets: 2627dd22c144763f172e02592dcaedf52e318f552ce5956c68ec86c8d2e8d6d5
       labels:
         app.kubernetes.io/name: keycloak
         helm.sh/chart: keycloak-12.3.0
@@ -1826,7 +1826,7 @@ spec:
         nodeAffinity:
           
       securityContext:
-        fsGroup: 1001
+        fsGroup: null
         runAsUser: null
       initContainers:
         - command:
@@ -1845,7 +1845,7 @@ spec:
           imagePullPolicy: IfNotPresent
           securityContext:
             runAsNonRoot: true
-            runAsUser: 1001
+            runAsUser: null
           env:
             - name: KUBERNETES_NAMESPACE
               valueFrom:
@@ -2078,16 +2078,16 @@ spec:
 apiVersion: v1
 kind: Pod
 metadata:
-  name: "camunda-platform-nsjiq-test"
+  name: "camunda-platform-chchb-test"
   annotations:
     "helm.sh/hook": test
     "helm.sh/hook-delete-policy": hook-succeeded
 spec:
   securityContext:
-    fsGroup: 1000
-    runAsUser: 1000
+    fsGroup: '@@null@@'
+    runAsUser: '@@null@@'
   containers:
-  - name: "camunda-platform-pqfwa-test"
+  - name: "camunda-platform-pdrkg-test"
     image: "docker.elastic.co/elasticsearch/elasticsearch:7.17.10"
     imagePullPolicy: "IfNotPresent"
     command:

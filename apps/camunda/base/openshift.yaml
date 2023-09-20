@@ -1,0 +1,41 @@
+# omit this section if elasticsearch.enabled is false
+elasticsearch:
+  securityContext:
+    runAsUser: "@@null@@"
+  sysctlInitContainer:
+    enabled: false
+  podSecurityContext:
+    fsGroup: "@@null@@"
+    runAsUser: "@@null@@"
+
+# omit this section if identity.enabled is false
+identity:
+  # omit this section if identity.keycloak.enabled is false
+  keycloak:
+    containerSecurityContext:
+      runAsUser: "@@null@@"
+    podSecurityContext:
+      fsGroup: "@@null@@"
+      runAsUser: "@@null@@"
+    postgresql:
+      # omit this section if identity.keycloak.postgresql.primary.enabled is false
+      primary:
+        containerSecurityContext:
+          runAsUser: "@@null@@"
+        podSecurityContext:
+          fsGroup: "@@null@@"
+          runAsUser: "@@null@@"
+      # omit this section if identity.keycloak.postgresql.readReplicas.enabled is false
+      readReplicas:
+        containerSecurityContext:
+          runAsUser: "@@null@@"
+        podSecurityContext:
+          fsGroup: "@@null@@"
+          runAsUser: "@@null@@"
+      # omit this section if identity.keycloak.postgresql.metrics.enabled is false
+      metrics:
+        containerSecurityContext:
+          runAsUser: "@@null@@"
+        podSecurityContext:
+          fsGroup: "@@null@@"
+          runAsUser: "@@null@@"
