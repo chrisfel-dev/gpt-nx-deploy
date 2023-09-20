@@ -5,5 +5,7 @@ commonLabels:
   app: camunda
   project: cubee2e
 
+resources:
+- camunda-helm.yaml
 
 
