@@ -12,7 +12,7 @@ spec:
   source:
     repoURL: 'https://github.com/chrisfel-dev/gpt-nx-deploy.git'
     targetRevision: main
-    path: camunda/overlays/dev
+    path: apps/camunda/overlays/dev
   syncPolicy:
     automated:
       prune: true
