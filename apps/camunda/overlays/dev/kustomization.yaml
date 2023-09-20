@@ -8,4 +8,4 @@ commonLabels:
 
 resources:
 - ../../base
-- test-secret.yaml
+- secrets.yaml
